@@ -1,0 +1,6 @@
+# campaign.toml
+id = "thornwall"; title = "Under Thornwall"; ver = "0.1.0"
+rules = "lite"; amap = "both"; party = 6
+start = { map = "b1", at = [0, 1], dir = "s" }
+maps  = ["maps/b1.toml"]
+lic   = "CC-BY-4.0"; credit = "Log, 2026"

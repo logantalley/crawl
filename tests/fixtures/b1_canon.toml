@@ -1,0 +1,43 @@
+id    = "b1"
+name  = "Thornwall Cellars B1"
+grid  = "edge"
+tiles = "stone"
+kind  = "dungeon"
+enc   = { rate = 6, table = "b1_rand" }
+map = """
++-+-+-+-+-+-+-+-+
+|S . .|. . . . T|
++ +-+ +l+-+-+-+ +
+|.|#|.|. . . .|.|
++ +-+ + +-+-+ + +
+|. . . .|A . .|.|
++-+d+-+-+ +-+v+ +
+|.|. . .|. . . .|
++ + +s+-+ +-+-+ +
+|.|.|C|.|. . F .|
++ + +-+ + +-+-+-+
+|. .|. . .|# # #|
++-+ +-+-+ +-+-+-+
+|. . . .|. . . .|
++ +-+-+ + +-+ + +
+|D . . . . .|. .|
++-+-+-+-+-+-+-+-+
+"""
+
+[legend]
+A = { ev = "b1_guard",  look = "npc_guard" }
+C = { ev = "b1_chest2", look = "chest" }
+D = { ev = "b1_down",   look = "stairs_dn" }
+F = { ev = "b1_gather", look = "gather" }
+S = { ev = "b1_up",     look = "stairs_up" }
+T = { ev = "b1_chest1", look = "chest" }
+
+[[edge]]
+at = [3, 0]; side = "s"; key = "bronze_key"
+
+[[zone]]
+k = "dark"; rect = [4, 5, 4, 3]
+
+[[foe]]
+id = "wolf1"; grp = "wolves"; look = "foe_wolf"
+ai = "patrol"; path = [[5, 6], [7, 6], [7, 7], [5, 7]]

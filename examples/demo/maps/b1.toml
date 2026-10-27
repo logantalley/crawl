@@ -1,0 +1,43 @@
+id    = "b1"
+name  = "Thornwall Cellars B1"
+grid  = "edge"
+tiles = "stone"
+kind  = "dungeon"                       # dungeon|outdoor
+enc   = { rate = 6, table = "b1_rand" }  # % per step
+map = """
++-+-+-+-+-+-+-+-+
+|S . .|. . . . T|
++ +-+ +d+-+-+-+ +
+|.|#|.|. . . .|.|
++ +-+ + +-+-+ + +
+|. . . .|A . .|.|
++-+d+-+-+ +-+v+ +
+|.|. . .|. . . .|
++ + +s+-+ +-+-+ +
+|.|.|C|.|. . F .|
++ + +-+ + +-+-+-+
+|. .|. . .|# # #|
++-+ +-+-+ +-+-+-+
+|. . . .|. . . .|
++ +-+-+ + +-+ + +
+|D . . . . .|. .|
++-+-+-+-+-+-+-+-+
+"""
+
+[legend]                   # glyph -> marker
+S = { ev = "b1_up",     look = "stairs_up" }
+D = { ev = "b1_down",   look = "stairs_dn" }
+T = { ev = "b1_chest1", look = "chest" }
+C = { ev = "b1_chest2", look = "chest" }
+A = { ev = "b1_guard",  look = "npc_guard" }
+F = { ev = "b1_gather", look = "gather" }
+
+[[edge]]
+at = [3, 0]; side = "s"; key = "bronze_key"
+
+[[zone]]
+k = "dark"; rect = [4, 5, 4, 3]       # x,y,w,h
+
+[[foe]]
+id = "wolf1"; grp = "wolves"; look = "foe_wolf"
+ai = "patrol"; path = [[5,6], [7,6], [7,7], [5,7]]

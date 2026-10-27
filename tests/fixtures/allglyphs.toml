@@ -1,0 +1,32 @@
+id    = "allg"
+name  = "All Glyphs"
+grid  = "edge"
+tiles = "stone"
+kind  = "dungeon"
+enc   = { rate = 10, table = "t_rand" }
+map = """
++-+-+-+-+
+|.d.l.s.|
++f+^+v+ +
+|.<.>.|K|
++-+ +-+-+
+|# . @ .|
++-+ +-+-+
+"""
+
+[legend]
+"@" = { ev = "at_ev",     look = "npc" }
+K   = { ev = "k_ev\"q\"", look = "chest" }
+
+[[edge]]
+at = [2, 0]; side = "w"; key = "iron_key"
+
+[[edge]]
+at = [3, 1]; side = "n"
+
+[[zone]]
+k = "dark"; rect = [0, 0, 2, 2]
+
+[[foe]]
+id = "rat"; grp = "rats"; look = "foe_rat"
+ai = "patrol"; path = [[1, 2], [3, 2]]
