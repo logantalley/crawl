@@ -32,7 +32,9 @@ jobs:
       - run: ctest --test-dir b -C Release --output-on-failure
       - run: SDL_VIDEODRIVER=dummy b/bin/crawl check examples/demo
       - uses: actions/upload-artifact@v7
-        with: { name: crawl-${{ matrix.id }}, path: b/bin/ }
+        with:
+          name: crawl-${{ matrix.id }}
+          path: b/bin/
 
   san:
     runs-on: ubuntu-24.04
