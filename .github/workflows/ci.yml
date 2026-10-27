@@ -25,7 +25,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libx11-dev libxext-dev libxrandr-dev \
-            libxcursor-dev libxi-dev libxss-dev libwayland-dev \
+            libxcursor-dev libxi-dev libxss-dev libxtst-dev libxfixes-dev libwayland-dev \
             libxkbcommon-dev libegl1-mesa-dev libasound2-dev libpulse-dev
       - run: cmake -B b -DCMAKE_BUILD_TYPE=Release "${{ matrix.xflags }}"
       - run: cmake --build b --config Release -j 4
@@ -44,7 +44,7 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install -y libx11-dev libxext-dev libxrandr-dev \
-            libxcursor-dev libxi-dev libxss-dev libwayland-dev \
+            libxcursor-dev libxi-dev libxss-dev libxtst-dev libxfixes-dev libwayland-dev \
             libxkbcommon-dev libegl1-mesa-dev libasound2-dev libpulse-dev
           sudo sysctl vm.mmap_rnd_bits=28   # ASan vs high-entropy ASLR
       - run: cmake -B b -DCMAKE_BUILD_TYPE=Debug -DCRAWL_SAN=ON
